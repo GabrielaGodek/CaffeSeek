@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
-use Illuminate\Http\Request;
 
 
 // Common Resource Routes - Name conventions
@@ -18,8 +17,9 @@ class ListingController extends Controller
 {
     public function index()
     {
+        // dd(request('tag'));
         return view('pages.index', [
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
     public function show($id)

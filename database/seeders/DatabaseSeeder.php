@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
         Listing::create([
             'title' => 'Black Coffee',
             'description' => 'Black coffee is as simple as it gets, with ground coffee beans steeped in hot water, served hot. And if you want to sound fancy, you can call black coffee by its proper name=> café noir.',
-            'ingredients' => 'Espresso, Hot water',
+            'ingredients' => 'Espresso',
             'proportions' => '1 part espresso to 1 part hot water',
             'image' => 'https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         ]);
         Listing::create([
             'title' => 'Black Coffee',
             'description' => 'Black coffee is as simple as it gets, with ground coffee beans steeped in hot water, served hot. And if you want to sound fancy, you can call black coffee by its proper name=> café noir.',
-            'ingredients' => 'Espresso, Hot water',
+            'ingredients' => 'Hot water',
             'proportions' => '1 part espresso to 1 part hot water',
             'image' => 'https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         ]);
