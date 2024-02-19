@@ -21,6 +21,7 @@
                         secondary: "#B0A695",
                         detail: "#39604c",
                         detail_second: "#5b796a",
+                        error: "#FF0000",
                     },
                 },
             },
@@ -30,7 +31,6 @@
 </head>
 
 <body>
-    {{-- VIEW OUTPUT --}}
     <div class="bg-bg pb-6 sm:pb-8 lg:pb-12">
         <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
             <header class="flex items-center justify-between py-4 md:py-4">
@@ -40,18 +40,43 @@
                     <img src="{{ asset('logo.png') }}" alt="CoffeeSeek">
                 </a>
                 <nav class=" gap-2 flex">
-                    <a href="/" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                        <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" delay="200"
-                            style="width:25px;height:25px; width: 100%;">
-                            <span class="inline-block float-right">Home</span>
-                        </lord-icon>
-                    </a>
-                    <a href="#" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                        <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover" delay="200"
-                            style="width:25px;height:25px; width: 100%;">
-                            <span class="inline-block float-ri">Login</span>
-                        </lord-icon>
-                    </a>
+                    @auth
+                        <span class="w-32 text-lg font-semibold text-black md:w-40 ">
+                            Welcome <span class="text-detail text-semibold">{{ auth()->user()->name }}</span>
+                        </span>
+                        <a href="/" class="w-28 text-lg font-semibold text-black md:w-32 ">
+                            <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" delay="200"
+                                style="width:25px;height:25px; width: 100%;">
+                                <span class="inline-block float-right">Home</span>
+                            </lord-icon>
+                        </a>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button type="submit">
+                                Logout
+                            </button>
+                        </form>
+                        {{-- <a href="register" class="w-28 text-lg font-semibold text-black md:w-32 ">
+                            <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover" delay="200"
+                                style="width:25px;height:25px; width: 100%;">
+                                <span class="inline-block float-ri">Log out</span>
+                            </lord-icon>
+                        </a> --}}
+                    @else
+                        <a href="/" class="w-28 text-lg font-semibold text-black md:w-32 ">
+                            <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" delay="200"
+                                style="width:25px;height:25px; width: 100%;">
+                                <span class="inline-block float-right">Home</span>
+                            </lord-icon>
+                        </a>
+                        <a href="register" class="w-28 text-lg font-semibold text-black md:w-32 ">
+                            <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover" delay="200"
+                                style="width:25px;height:25px; width: 100%;">
+                                <span class="inline-block float-ri">Register</span>
+                            </lord-icon>
+                        </a>
+
+                    @endauth
                 </nav>
 
             </header>
@@ -87,7 +112,10 @@
                                 </svg>
                             </a>
                         </div>
+
                     </div>
+                    <div class="py-8 text-center text-sm text-gray-400"><a href="https://lordicon.com/">Icons by
+                            Lordicon.com</a></div>
 
                 </footer>
             </div>
