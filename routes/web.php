@@ -17,11 +17,11 @@ use App\Http\Controllers\ListingController;
 */
 
 Route::get('/', [ListingController::class, 'index']);
-Route::get('/listing/{id}', [ListingController::class, 'show']);
+Route::get('/listing/{id}', [ListingController::class, 'show'])->middleware('auth');
 
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 

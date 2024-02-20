@@ -46,7 +46,8 @@ class UserController extends Controller
         ]);
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-            return view('/');
+
+            return redirect('/')->with('message', 'You are now logged in!');
         }
         return back()->withError(['email' => 'Invalid credentials'])->onlyInput('email');
         // $formFields['password'] = bcrypt($formFields['password']);

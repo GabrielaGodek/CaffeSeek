@@ -9,7 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Listing extends Model
 {
     use HasFactory;
+    protected $table = 'coffees';
+    protected $fillable = [
+        'id',
+        'title',
+        'description',
+        'ingredients',
+        'proportions',
+        'image',
 
+    ];
     public function scopeFilter($query, array $filters)
     {
         // dd($filters['tag']);

@@ -5,6 +5,11 @@
         <section class="flex flex-col justify-between gap-4 sm:gap-6 md:gap-8 lg:flex-row">
             <div
                 class="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
+                @auth
+                <div class="w-full text-3xl font-semibold text-black text-left mb-2">
+                    Welcome <span class="text-detail text-semibold">{{ auth()->user()->name }}</span>
+                </div>
+                @endauth
                 <h1 class="mb-8 text-3xl font-bold text-black sm:text-4xl md:mb-12 md:text-5xl"><span
                         class="text-primary">Discover your coffee: </span>A must-have page for coffee enthusiasts!</h1>
 
@@ -21,7 +26,5 @@
                     loading="lazy" alt="Photo by Fakurian Design" class="h-full w-full object-cover object-center" />
             </div>
         </section>
-
-        
     </div>
 </div>

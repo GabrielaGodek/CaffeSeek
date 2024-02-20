@@ -41,40 +41,45 @@
                 </a>
                 <nav class=" gap-2 flex">
                     @auth
-                        <span class="w-32 text-lg font-semibold text-black md:w-40 ">
-                            Welcome <span class="text-detail text-semibold">{{ auth()->user()->name }}</span>
-                        </span>
-                        <a href="/" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                            <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" delay="200"
-                                style="width:25px;height:25px; width: 100%;">
-                                <span class="inline-block float-right">Home</span>
-                            </lord-icon>
-                        </a>
-                        <form action="/logout" method="POST">
+                        
+                        <div class="flex">
+                            <a href="/"
+                                class="flex items-center justify-center w-28 text-lg font-semibold text-black md:w-32">
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" target=".nav-home" trigger="hover"
+                                    delay="200" style="width:25px;height:25px;">
+                                </lord-icon>
+                                <span class="inline-block float-right nav nav-home">Home</span>
+                            </a>
+                        </div>
+                        <form action="/logout" method="POST"
+                            class="flex items-center justify-center w-28 text-lg font-semibold text-black md:w-32">
                             @csrf
+                            <lord-icon src="https://cdn.lordicon.com/nqtddedc.json" trigger="hover"
+                                style="width:25px;height:25px">
+                            </lord-icon>
                             <button type="submit">
                                 Logout
                             </button>
                         </form>
-                        {{-- <a href="register" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                            <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover" delay="200"
-                                style="width:25px;height:25px; width: 100%;">
-                                <span class="inline-block float-ri">Log out</span>
-                            </lord-icon>
-                        </a> --}}
                     @else
-                        <a href="/" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                            <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" delay="200"
-                                style="width:25px;height:25px; width: 100%;">
-                                <span class="inline-block float-right">Home</span>
-                            </lord-icon>
-                        </a>
-                        <a href="register" class="w-28 text-lg font-semibold text-black md:w-32 ">
-                            <lord-icon src="https://cdn.lordicon.com/kthelypq.json" trigger="hover" delay="200"
-                                style="width:25px;height:25px; width: 100%;">
-                                <span class="inline-block float-ri">Register</span>
-                            </lord-icon>
-                        </a>
+                        <div class="flex">
+                            <a href="/"
+                                class="flex items-center justify-center w-28 text-lg font-semibold text-black md:w-32">
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" target=".nav-home" trigger="hover"
+                                    delay="200" style="width:25px;height:25px;">
+                                </lord-icon>
+                                <span class="inline-block float-right nav nav-home">Home</span>
+                            </a>
+                        </div>
+                        <div class="flex">
+                            <a href="register"
+                                class="flex items-center justify-center w-28 text-lg font-semibold text-black md:w-32">
+                                <lord-icon src="https://cdn.lordicon.com/kthelypq.json" target=".nav-login" trigger="hover"
+                                    delay="200" style="width:25px;height:25px;">
+                                </lord-icon>
+                                <span class="ml-1 nav nav-login">Register</span>
+                            </a>
+                        </div>
 
                     @endauth
                 </nav>
@@ -121,6 +126,7 @@
             </div>
         </div>
     </div>
+    @vite(['resources/js/app.js'])
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </body>
 
