@@ -3,9 +3,11 @@ Database-driven application with MySQL and Tailwind CSS styling, displaying a li
 
 ## Installation
 1. Copy this repo: `https://github.com/GabrielaGodek/CoffeeSeek`
-2. Open terminal and type `php artisan db:seed`
-2. Run application  `php artisan serve`
-3. Type at your browser `http://127.0.0.1:8000/` 
+2. Copy `.env.example` to your `.env` file
+3. Install all dependencies `composer install`
+4. Open terminal and type `php artisan db:seed`
+5. Run application  `php artisan serve`
+6. Type at your browser `http://127.0.0.1:8000/` 
 
 ## Technologies
 - Vite: `^5.0.0`
