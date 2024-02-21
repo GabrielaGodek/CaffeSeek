@@ -1,17 +1,17 @@
 @props(['listing'])
 
 <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-    <a href="/listing/{{ $listing['id'] }}" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+    <a href="/listing/{{ $listing['id'] }}" class="group max-h-52 flex-auto relative block h-48 overflow-hidden bg-gray-100 md:h-64">
         <img src="{{ $listing['image'] }}" loading="lazy" alt="Photo by Minh Pham"
             class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
     </a>
 
-    <div class="flex flex-1 flex-col p-4 sm:p-6">
+    <div class="flex flex-col flex-auto justify-between p-4 sm:p-6">
         <h2 class="mb-2 text-lg font-semibold text-gray-800">
-            <a href="#"
+            <a href="/listing/{{ $listing['id'] }}"
                 class="transition duration-100 hover:text-detail active:text-indigo-600">{{ $listing['title'] }}</a>
         </h2>
-        <div class="flex items-center gap-2 mb-4 ">
+        <div class="flex flex-wrap items-center gap-2 mb-4 ">
            <x-tag :tagsProp="$listing['ingredients']"/>
         </div>
         <div class="mt-auto flex items-end justify-end">

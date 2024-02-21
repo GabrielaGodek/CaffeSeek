@@ -1,6 +1,11 @@
 # Coffee Seek
+Database-driven application with MySQL and Tailwind CSS styling, displaying a list of coffees with details. The system incorporates user authentication and registration functionalities, ensuring secure access and features data filtering by tags and searching by keyword.
 
 ## Installation
+1. Copy this repo: `https://github.com/GabrielaGodek/CoffeeSeek`
+2. Open terminal and type `php artisan db:seed`
+2. Run application  `php artisan serve`
+3. Type at your browser `http://127.0.0.1:8000/` 
 
 ## Technologies
 - Vite: `^5.0.0`
