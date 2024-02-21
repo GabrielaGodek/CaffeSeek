@@ -25,4 +25,4 @@ Password: 123456
 ```
 
 ## Preview
-![Coffee Seek Preview](public/coffeeseek1_preview.png)
+![Coffee Seek Preview](public/coffeeseek_preview.png)
